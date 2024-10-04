@@ -529,8 +529,21 @@
                 $mysqli->close();
                 break;
 
-            case 36:
-                
+            case 37:
+                echo "<form action=pagina2.php method=post>
+                Ingrese nombre: 
+                <input type=text name=nombre><br> 
+                Ingrese mail: 
+                <input type=text name=mail><br> 
+                Seleccione el curso: 
+                <select name=codigocurso> 
+                <option value=1>PHP</option> 
+                <option value=2>ASP</option> 
+                <option value=3>JSP</option> 
+                </select> 
+                <br> 
+                <input type=submit value=Registrar>";
+                break;
 
             default:
             echo "<h1>opcion no disponible</h1>";
