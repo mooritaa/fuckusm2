@@ -1,10 +1,12 @@
-<html> 
-<head> 
-  <title>newpage1</title> 
-</head> 
- 
-<body> 
-Esta es la pagina protegida con MAGIC 
-newpage1.html 
-</body> 
-</html> 
+<?php 
+//corresponde al ejercicio 32s
+ if (isset($_POST['pass'])) {
+    $pass=$_POST['pass']; 
+    if($pass == "quieropuntos"){
+  $login = true; 
+        }
+    } 
+ if ($login) { 
+    echo "<p>Aqui empieza el arma secreta.</p>"; 
+    } 
+?> 
