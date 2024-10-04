@@ -1,4 +1,3 @@
-
 <?php
     $ejercicio=$_POST['txtNum'];
     switch ($ejercicio){
@@ -103,7 +102,6 @@
             echo $a >= $c, "<br>"; 
             echo "A es menor o igual que B --> ";
             echo $a <= $c, "<br>";
-
             break;
 
         case 12:
@@ -139,7 +137,6 @@
             echo "4 x 8 = ", $a * 8, "<br>";
             echo "4 x 9 = ", $a * 9, "<br>";
             echo "4 x 10 = ", $a * 10, "<br>";
-
             break;
 
         case 14:
@@ -217,44 +214,64 @@
             break;
         
         case 18:
-            echo "<title>Uso de ciclos for, funciones y variables</title>";
-            echo "<h1>Ejemplo del uso de ciclos for, funciones, comandos html, variables y tablas para combinar php y html.</h1>";
-
-        function muestra($valor) {
-            if ($valor < 0.5)
-            $color = "red";
-            else
-            $color = "blue";
-            echo "<td><font color='$color'>$valor</font></td>\n";
-            }
-            
-            echo "<table border=1>";
-            for ($x=0; $x<=2; $x+=0.01){
-            echo "<tr>";
-            muestra($x);
-            muestra(sin($x));
-            muestra(cos($x));
-            echo "</tr>";
-            }
+            echo "<title>Tabla</title>";
+            echo "<h3>Table seno y coseno</h3>";
+            function muestra($valor) { 
+                if ($valor < 0.5) 
+                  $color = "red"; 
+                else 
+                  $color = "blue"; 
+                echo "<td><font color='$color'>$valor</font></td>\n"; 
+                } 
+             echo "<table border=1>";
+                for($x=0; $x<=2; $x+=0.01){ 
+                  echo "<tr>"; 
+                  muestra($x); 
+                  muestra(sin($x)); 
+                  muestra(cos($x)); 
+                  echo "</tr>"; 
+                } 
             break;
         
         case 19:
-
+            echo "<title>Tabla</title>";
+            echo "<h3>Table seno y coseno</h3>";
+            function muestra($valor) { 
+                if ($valor % 2) 
+                    $fondo = "#eeeeee"; 
+                else 
+                    $fondo = "#dddddd"; 
+               
+                if ($valor < 0.5) 
+                  $color = "red"; 
+                else 
+                  $color = "blue"; 
+                echo "<td bgcolor='$fondo'><font color='$color'>$valor</font></td>\n"; 
+                } 
+            echo "<table border=1>"; 
+                $nrenglon = 0; 
+                for ($x=0; $x<=2; $x+=0.01){ 
+                  echo "<tr>"; 
+                  muestra($x); 
+                  muestra(sin($x)); 
+                  muestra(cos($x)); 
+                  echo "</tr>"; 
+                }
             break;
 
         case 20:
-              echo "<title>Tabla</title>";
-             echo "<h3>Table seno y coseno</h3>";
-              function muestra($valor) { 
-                 global $nrenglon; 
-                 if ($nrenglon % 2) 
+            echo "<title>Tabla</title>";
+            echo "<h3>Table seno y coseno</h3>";
+            function muestra($valor) { 
+                global $nrenglon; 
+                if ($nrenglon % 2) 
                     $fondo = "#ffff00"; 
                 else 
                     $fondo = "#ffffff"; 
-                   
+               
                 if ($valor < 0.5) 
-                     $color = "red"; 
-                 else 
+                  $color = "red"; 
+                else 
                   $color = "blue"; 
                 echo "<td bgcolor='$fondo'><font color='$color'>$valor</font></td>\n"; 
                 }
@@ -262,178 +279,255 @@
                 $nrenglon = 0; 
                 for ($x=0; $x<=2; $x+=0.05){ 
                   echo "<tr>"; 
-                     muestra($x); 
-                     muestra(sin($x)); 
-                     muestra(cos($x)); 
-                     echo "</tr>"; 
-                 }  
-                 break;
-        
-        case 21:
-            echo "<title>Ciclo while</title>";
-             echo "<form action=2.php method=post> 
-                 ¿Cuantas veces desea la repeticion? 
-                 <input type=text name=number> 
-                <input type=submit value=Enviar>";   
-                 break;
+                  muestra($x); 
+                  muestra(sin($x)); 
+                  muestra(cos($x)); 
+                  echo "</tr>"; 
+                }  
+                break;
 
-        
-        case 22:
+            case 21:
                 echo "<title>Ciclo while</title>";
                 echo "<form action=2.php method=post> 
-                   ¿Cuantas veces desea la repeticion? 
-                   <input type=text name=number> 
-                   <input type=submit value=Enviar>";
+                ¿Cuantas veces desea la repeticion? 
+                <input type=text name=number> 
+                <input type=submit value=Enviar>";   
+                   break;
+
+            case 22:
+                echo "<title>Ciclo while</title>";
+                echo "<form action=2.php method=post> 
+                ¿Cuantas veces desea la repeticion? 
+                <input type=text name=number> 
+                <input type=submit value=Enviar>";
                 break;
-        
-        case 23:
 
+            case 23:
+                echo "<form action=descarte3.php method=post> 
+                ¿Desea ver la pagina? 
+                <input type=text name=si> 
+                <input type=submit value=Enviar>";
+                break;
 
-            break;
+            case 24:
+                echo "<title>Formulario</title>";
+                echo "<form action=3.php method=post> 
+                Introduce tu nombre: 
+                <input type=text name=nombre> 
+                <input type=submit>"; 
+                break;
 
-        
-        
+            case 25: 
+                echo "<title>Formulario</title>";
+                echo "<form action=4.php method=post> 
+                <input type=radio name=gender value=0> Sr. 
+                <input type=radio name=gender value=1> Sra.<br> 
+                Tu apellido:<br> 
+                <input type=text name=lastname> 
+                <input type=submit>";  
+                break;
 
+            case 26:
+                echo "<form action=4.php method=post> 
+                <input type=radio name=gender value=0> Sr. 
+                <input type=radio name=gender value=1> Sra.<br> 
+                Tu apellido:<br> 
+                <input type=text name=lastname> 
+                <input type=submit name=submitbutton value=Envialo!>";
+                break;
+
+            case 27:
+                echo "<title>contraceña</title>";
+                echo "<form action=apendice.php method=post> 
+                <input type=text name=pw>
+                ingrese contracena
+                <input type=submit value=Enviar>";
+                  break;
+
+            case 28:
+                echo "<meta http-equiv=content-type content=text/html; charset=ISO-8859-1>";
+                echo "<p>¡Enviame un e-mail!</p> 
+                <form action=texto.txt method=post> 
+                Tu direcciòn de e-mail: <br> 
+                <input type=text name=Mail ><br> 
+                Tu comentario: <br> 
+                <textarea name=message cols=50 rows=5>
+                </textarea><br> 
+                <input type=submit value=Enviar> 
+                </form>";
+                $receiverMail = "tudireccion@tudominio.es"; // escribe aqui tu direcciòn 
+                if (isset($_POST['Mail']) && $_POST['Mail'] != "") { 
+                if (mail ($receivermail, "¡Tienes correo nuevo!", $_POST['message'], "From: 
+                $_POST[Mail]")) { 
+                echo "<p>Gracias por enviarme tu opiniòn.</p>\n"; 
+                } 
+                else { 
+                echo "<p>Lo siento, ha ocurrido un error.</p>\n"; 
+                } 
+                }
+                break; 
+
+            case 29:
+                echo "<h1>Contador Sencillo</h1>";
+                echo "<p>Cantidad de visitas:";
+                $fp = fopen("counter.txt", "r+");
+                $counter = fgets($fp, 7);
+                echo $counter;
+                $counter ++;
+                rewind($fp);
+                fputs($fp, $counter);
+                fclose($fp);
+                break;
+
+            case 30:
+                //guestbook.txt pertenece aki
+                echo "<meta http-equiv=content-type content=text/html; charset=iso-8859-1>
+                <h1>Libro de visitas</h1>
+                <form action=9.php method=post
+                Tu comentario:<br>
+                <textarea cols=55 rows=4 name=comment></textarea><br>
+                Tu nombre:<br>
+                <input type=text name=name><br>
+                Tu e-mail:<br>
+                <input type=text name=email><br>
+                <input type=submit value=publica:>
+                </form>";
+                break;
+                
+            case 31:
+                setcookie("check", 1);
+                if (isset($_POST['submit'])) {
+                setcookie("vote", 1);
+                }
+                echo "<meta http-equiv=content-type content=text/html; charset=iso-8859-1>";
+                echo "<h1>Encuesta</h1>";
+                echo "<h3>¿Que opinas de este curso de php?</h3>";
+                echo "<form action=<";
+                echo "$_SERVER[PHP_SELF]; method=post>";
+                echo "<input type=radio name=reply value=0>";
+                echo "Excelente, he aprendido mucho.<br>";
+                echo "<input type=radio name=reply value=1>";
+                echo "Mas o menos, es muy complicado.<br>";
+                echo "<input type=radio name=reply value=2>";
+                echo "¡Bah! para que quiero aprender php";
+                echo "<br> <br>";
+                if (empty($_POST['submit']) && empty($_COOKIE['voted'])) {
+                //Mostrar el botòn submit solo si el formulario todavia
+                // no se ha enviado y el usuario no ha votado.
+                echo "<input name=submit type=submit value=vota!>";
+                } else {
+                echo "<p>Gracias por tu voto.</p>\n";
+                //¿Formulario enviado? ¿cookies activas? ¿pero todavia no se ha votado?
+                if (isset($_POST['reply']) && isset($_COOKIE['check']) && empty($_COOKIE['voted'])) {
+                //Guardar nombre de archivo en la variable
+                $file="results.txt";
+                $fp=fopen($file, "r+");
+                $vote=fread($fp, filesize($file));
+                //Descomponer la string del archivo en array con coma como separador
+                $arr_vote = explode("," , $vote); //explode convierte la string en array
+                //¿que valor se ha selleccionado en el formulario?
+                //¡El recuento aumenta en 1!
+                $reply=$_POST['reply'];
+                $arr_vote[$reply]++;
+                //volver a montar la string
+                $vote = implode(",", $arr_vote); // implode vincula elementos de la array a string
+                rewind($fp);
+                //Escribir nueva string en el archivo
+                echo "fputs($fp, $vote)";
+                echo "fclose($fp)";
+                }
+                }
+                echo "</form>";
+                echo "<p>";
+                echo "[ <a href=results.txt target=_blank>ver resultados de la encuesta</a>]";
+                echo "</p>";
+                break;  
+                              
+            case 32:
+                echo "<title>contraceña</title>";
+                echo "<form action=6.php method=post> 
+                Contraseña: 
+                <input type=password name=pass> 
+                <input type=submit value=Enviar> ";
+                break;
+
+            case 33: //mirar 7.php
+                break;
+
+            case 34:
+                $servername = "localhost"; 
+                $username = "root"; 
+                $password = "";
+               
+                $database = "agenda";
+               
+                 // Create a connection 
+                 $conn = mysqli_connect($servername, 
+                     $username, $password, $database);
+
+                if($conn) {
+                    echo "conectado a la base de datos"; 
+                } 
+                else {
+                    die("Error". mysqli_connect_error()); 
+                }
+                echo "<form action=8.php method=post> 
+                Ingrese su nombre: <br> 
+                <input type=text name=nombre> 
+                <input type=submit value=Enviar >
+                <br>Ingrese su apellido: <br>
+                <input type=text name=apellido> 
+                <input type=submit value=Enviar>";                
+                break;
+
+            case 35:
+                //CODIO FEO!!!!!!!!!!
+                // Conexión a la base de datos
+                $mysqli = new mysqli("localhost", "root", "", "agenda");
+
+                // Verificar conexión
+                if ($mysqli->connect_error) {
+                    die("Conexión fallida: " . $mysqli->connect_error);
+                }
+
+                // Realizar una consulta
+                $sql = "SELECT * FROM direcciones";
+                $resultado = $mysqli->query($sql);
             
-        
-    
+                if (!$resultado) {
+                    die("Error en la consulta: " . $mysqli->error);
+                    }
+                
+                // Obtener información de la consulta
+                $campos = $resultado->field_count;
+                $filas = $resultado->num_rows;
+                echo "<p>Cantidad de filas: $filas</p>\n";
+                echo "<table border='1' cellspacing='0'>\n"; // Empezar tabla
+                echo "<tr>"; // Crear fila
 
-        case 29:
-        echo "<h1>Contador Sencillo</h1>";
-        echo "<p>Cantidad de visitas:";
-        
-        $fp = fopen("counter.txt", "r+");
-        $counter = fgets($fp, 7);
-        echo $counter;
-        $counter ++;
-        rewind($fp);
-        fputs($fp, $counter);
-        fclose($fp);
-    
-            break;
+                // Obtener nombres de los campos
+                $field_info = $resultado->fetch_fields();
+                foreach ($field_info as $field) {
+                    echo "<th>{$field->name}</th>";
+                }
+                echo "</tr>\n"; // Cerrar fila
 
-        case 30:
-        ?>
-        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
-        <h1>Libro de visitas</h1>
-        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post"
-        Tu comentario:<br>
-        <textarea cols="55" rows="4" name="comment"></textarea><br>
-        Tu nombre:<br>
-        <input type="text" name="name"><br>
-        Tu e-mail:<br>
-        <input type="text" name="email"><br>
-        <input type="submit" value="publica:">
-        </form>
-        <h3>Mostrar todos los comentarios</h3>
-        <?php
-        //Guarda el nombre del archivo en la variable
-        $file ="guestbook.txt";
-        //¿variable comment definida? ¿Nombre e e-mail no estan vacios?
-        //if isset($_POST['comment']) && $_POST['name'] ! = "" && $_POST['email'] != "" {
-        if (isset($_POST['comment']) && isset($_POST['name']) != "" && $_POST['email'] != "") {
-            $comment = $_POST['comment'];
-            $name = $_POST['name'];
-            $email = $_POST['email'];
-            //El archivo se abre para escritura-lectura
-            $fp = fopen($file, "r+");
-            //Leer todos los datos y almacenar en $old
-            $old = fread ($fp, filesize($file));
-        
-            //Se crea el vinculo de e-mail
-            $email = "<a href=\mailto:$email\">$email</a>";
-            //Se incluye la fecha y se le da formato
-            //Ocultar caracteres html, eliminar slashes, mantener saltos de linea
-            $comment = htmlspecialchars($comment);
-            // $comment = stripslashes(n12br($comment));
-            $comment = stripslashes($comment);
-            //"Montar la entrada (entry) del libro de visitas
-            $entry="<p><b>$name</b> ($email) wrote on;<br>$comment</p>\n";
-            //El cursor invisible salta al principio
-            rewind($fp);
-            //Escribir en la nueva entrada antes de las antiguas en el archivo:
-            fputs($fp, "$entry \n $old");
-            //cerrar rl archivo
-            fclose($fp);
-        }
-        //Mostrar el archivo completo
-        readfile($file);
-        
+                // Mostrar resultados en la tabla
+                while ($row = $resultado->fetch_assoc()) {
+                    echo "<tr>"; // Crear fila
+                    foreach ($row as $value) {
+                        echo "<td>$value </td>";
+                    }
+                    echo "</tr>\n"; // Cerrar fila
+                }
+                echo "</table>\n"; // Cerrar tabla
 
-            
+                // Cerrar conexión
+                $mysqli->close();
+                break;
 
-            break;
-        
-        case 31:
-        
-        setcookie("check", 1);
-        if (isset($_POST['submit'])) {
-        setcookie("vote", 1);
-        }
-        echo "<meta http-equiv=content-type content=text/html; charset=iso-8859-1>";
-        echo "<h1>Encuesta</h1>";
-        echo "<h3>¿Que opinas de este curso de php?</h3>";
-        echo "<form action=<";
-        echo "$_SERVER[PHP_SELF]; method=post>";
-        echo "<input type=radio name=reply value=0>";
-        echo "Excelente, he aprendido mucho.<br>";
-        echo "<input type=radio name=reply value=1>";
-        echo "Mas o menos, es muy complicado.<br>";
-        echo "<input type=radio name=reply value=2>";
-        echo "¡Bah! para que quiero aprender php";
-        echo "<br> <br>";
-        if (empty($_POST['submit']) && empty($_COOKIE['voted'])) {
-        //Mostrar el botòn submit solo si el formulario todavia
-        // no se ha enviado y el usuario no ha votado.
-        echo "<input name=submit type=submit value=vota!>";
-        } else {
-        echo "<p>Gracias por tu voto.</p>\n";
-        //¿Formulario enviado? ¿cookies activas? ¿pero todavia no se ha votado?
-        if (isset($_POST['reply']) && isset($_COOKIE['check']) && empty($_COOKIE['voted'])) {
-        //Guardar nombre de archivo en la variable
-        $file="results.txt";
-        $fp=fopen($file, "r+");
-        $vote=fread($fp, filesize($file));
-        //Descomponer la string del archivo en array con coma como separador
-        $arr_vote = explode("," , $vote); //explode convierte la string en array
-        //¿que valor se ha selleccionado en el formulario?
-        //¡El recuento aumenta en 1!
-        $reply=$_POST['reply'];
-        $arr_vote[$reply]++;
-        //volver a montar la string
-        $vote = implode(",", $arr_vote); // implode vincula elementos de la array a string
-        rewind($fp);
-        //Escribir nueva string en el archivo
-        echo "fputs($fp, $vote)";
-        echo "fclose($fp)";
-        }
-        }
-        echo "</form>";
-        echo "<p>";
-        echo "[ <a href=results.txt target=_blank>ver resultados de la encuesta</a>]";
-        echo "</p>";
-        
-        
-        break;
-
-        case 35:
-        echo"<h1>Mostrar Nombres de la Agenda. BD </h1>";
-        $dp = mysqli_connect("localhost", "root", "" );
-        mysqli_select_db("agenda", $dp);
-        $sql = "SELECT * FROM direcciones" ;
-        $resultado = mysqli_query($sql);
-        while ($row = mysqli_fetch_assoc($resultado)) {
-        echo "$row[Nombre] $row[Apellido]<br>\n";
-        }
-        mysqli_close($dp);
-
-
-        break;
-
-            
-
-
-
+            case 36:
+                
 
             default:
             echo "<h1>opcion no disponible</h1>";
