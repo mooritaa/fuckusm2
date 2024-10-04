@@ -481,7 +481,7 @@
                 break;
 
             case 35:
-                //CODIO FEO!!!!!!!!!!
+                //CODIO FEO!!!!!!!!!!  (código echo por bing)
                 // Conexión a la base de datos
                 $mysqli = new mysqli("localhost", "root", "", "agenda");
 
