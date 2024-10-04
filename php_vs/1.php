@@ -451,7 +451,10 @@
                 <input type=submit value=Enviar> ";
                 break;
 
-            case 33: //mirar 7.php
+            case 33:
+                // Redirigir a 7.php
+                header("Location: 7.php");
+                exit();     
                 break;
 
             case 34:
