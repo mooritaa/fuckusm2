@@ -1,5 +1,5 @@
 <?php 
-//corresponde al ejercicio 32s
+//corresponde al ejercicio 32 y va con newpage1 y newpage2 :) 
  if (isset($_POST['pass'])) {
     $pass=$_POST['pass']; 
     if($pass == "quieropuntos"){
