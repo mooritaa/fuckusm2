@@ -639,8 +639,13 @@
                 $conn->close();
 
                  break;
+        case 48:
 
-       
+            echo "<A href=pagina05.php?tabla=2>Tabla del 2</A> <br> 
+            <A href=pagina05.php?tabla=3>Tabla del 3</A> <br> 
+            <A href=pagina05.php?tabla=5>Tabla del 5</A>";
+
+                break;
 
         case 60:
               echo "<form action=pagina60.php method=post>
