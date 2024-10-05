@@ -529,6 +529,12 @@
                 $mysqli->close();
                 break;
 
+            case 36:
+                // Redirigir a 10.php
+                header("Location: 10.php");
+                exit();     
+                break;         
+
             case 37:
                 echo "<form action=pagina2.php method=post>
                 Ingrese nombre: 
@@ -545,6 +551,12 @@
                 <input type=submit value=Registrar>";
                 break;
         
+            case 38:
+                // Redirigir a 11.php
+                header("Location: 11.php");
+                exit();     
+                break;        
+        
             case 39: 
 
                 echo "<form action=pagina03.php method=post>
@@ -555,6 +567,30 @@
                 </select> 
                 <br>";
                 break;
+        
+            case 41:
+                // Create a new connection using mysqli
+                $conexion = new mysqli("localhost", "root", "", "hola");
+
+                // Check connection
+                if ($conexion->connect_error) {
+                    die("Problemas en la conexion: " . $conexion->connect_error);
+                }
+                // Prepare the query
+                $stmt = $conexion->prepare("DELETE FROM chao");
+                // Execute the query
+                $stmt->execute();
+                // Close the connection
+                $conexion->close();
+                echo "Se efectuó el borrado de todos los alumnos.";
+                break;        
+        
+            case 42:
+                echo "<form action=15.php method=post> 
+                Ingrese el correo electronico del alumno: 
+                <input type=text name=correo><br> 
+                <input type=submit value=buscar>";
+                break;        
 
             default:
             echo "<h1>opcion no disponible</h1>";
