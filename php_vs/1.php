@@ -606,7 +606,48 @@
                 break; 
 
             case 44:
-
+                //en la base de datos de phpfacil, tienes que crear dos tablas
+                //la primera se llama cursos (codigo=INT PRIMARY KEY, nombrecur VARCHAR(255))--
+                //la segunda tabla se va a llamar alumnos (codigo INT PRIMARY KEY, nombre VARCHAR(255), mail VARCHAR(255), codigocurso INT,)
+                //para hacer las llaves primarias te vas a la tabla de alumnos y cursos y le das a estructura, luego en la fila de codigo de ambas tablas, le das mas y te dice primaria, le das click
+                //para la foranea y la referencia le das a la base de datos phpfacil y das click en sql y vas a copiart y pegar estas tres lineas
+                //ALTER TABLE alumnos
+                //ADD CONSTRAINT fk_codigocurso
+                //FOREIGN KEY (codigocurso) REFERENCES cursos(codigo);
+                //luego le das a continuar y ya
+        
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "phpfacil";
+    
+                // Creamos la conexion
+                $conn = new mysqli($servername, $username, $password, $dbname);
+                // verificamos la conexion
+                if ($conn->connect_error) {
+                die("Problemas en la conexión: " . $conn->connect_error);
+                }
+                $sql = "SELECT alu.codigo as codigo, nombre, mail, codigocurso, nombrecur
+                  FROM alumnos as alu
+                  INNER JOIN cursos as cur ON cur.codigo = alu.codigocurso";
+                $result = $conn->query($sql);
+                if (!$result) {
+                die("Problemas en el select: " . $conn->error);
+                }
+                else {
+                echo "No se encontraron resultados";
+                }
+                while ($reg = $result->fetch_assoc()) {
+                   echo "Código: " . $reg['codigo'] . "<br>";
+                   echo "Nombre: " . $reg['nombre'] . "<br>";
+                   echo "Mail: " . $reg['mail'] . "<br>";
+                   echo "Curso: " . $reg['nombrecur'] . "<br>";
+                   echo "<hr>";
+                }
+    
+                $conn->close();
+                break;
+        
             case 45:
                 // Crear una nueva conexión usando mysqli
                 $conexion = new mysqli("localhost", "root", "", "hola");
