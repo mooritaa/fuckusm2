@@ -73,11 +73,16 @@
     <h4>57. Redireccionar a otra pagina</h4>
     <h4>58. Creacion de imagenes dinamicas</h4>
     <h4>59. Captcha en HTML</h4>
-    <h4>60. Fechas</h4>
-    <h4>61. Validacion de fecha entregada</h4>
-    <h4>62. Carga de una fecha en tabla</h4>
-    <h4>63. Funcion printf</h4>
-    <h4>64. Funcion sprintf</h4>
+    <h4>60. Variables de sesión</h4>
+    <h4>61. Archivo externo</h4>
+    <h4>62. Redirecciona a otra pagina</h4>
+    <h4>63. Creacion de imagen dinamica</h4>
+    <h4>64. Digito de verificación</h4>
+    <h4>65. Fechas</h4>
+    <h4>66. Validación de una fecha</h4>
+    <h4>67. Carga de una fecha en una tabla</h4>
+    <h4>68. Función printf</h4>
+    <h4>69. Función sprintf</h4>
     </form>
 </body>
 </html>
