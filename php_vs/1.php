@@ -721,13 +721,29 @@
                 $conn->close();
 
                  break;
-        case 48:
+            case 48:
 
-            echo "<A href=pagina05.php?tabla=2>Tabla del 2</A> <br> 
-            <A href=pagina05.php?tabla=3>Tabla del 3</A> <br> 
-            <A href=pagina05.php?tabla=5>Tabla del 5</A>";
+                echo "<A href=pagina05.php?tabla=2>Tabla del 2</A> <br> 
+                <A href=pagina05.php?tabla=3>Tabla del 3</A> <br> 
+                <A href=pagina05.php?tabla=5>Tabla del 5</A>";
 
                 break;
+        
+            case 49: 
+        
+            case 50: 
+                echo "<form action=23.php method=post enctype=multipart/form-data> 
+                Seleccione el archivo: 
+                <input type=file name=foto><br> 
+                <input type=submit value=Enviar>";
+                break;
+
+            case 51:
+                // Redirigir a 24.php
+                header("Location: 24.php");
+                exit();     
+                break; 
+                       
 
         case 60:
               echo "<form action=pagina60.php method=post>
