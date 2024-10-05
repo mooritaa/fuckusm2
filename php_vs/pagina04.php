@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "phpfacil1";
+$dbname = "phpfacil";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
