@@ -598,6 +598,47 @@
                 <input type=text name=correo><br> 
                 <input type=submit value=buscar>";
                 break; 
+
+            case 43:
+                // Redirigir a 17.php
+                header("Location: 17.php");
+                exit();     
+                break; 
+
+            case 44:
+
+            case 45:
+                // Crear una nueva conexión usando mysqli
+                $conexion = new mysqli("localhost", "root", "", "hola");
+
+                // Verificar la conexión
+                if ($conexion->connect_error) {
+                    die("Problemas en la conexion: " . $conexion->connect_error);
+                }
+
+                // Preparar la consulta
+                $stmt = $conexion->prepare("SELECT COUNT(*) as cantidad FROM chao");
+
+                // Ejecutar la consulta
+                $stmt->execute();
+
+                // Obtener el resultado
+                $result = $stmt->get_result();
+
+                $reg = $result->fetch_assoc();
+
+                echo "La cantidad de alumnos inscritos son : " . $reg['cantidad'];
+
+                // Cerrar la conexión
+                $conexion->close();
+                break;
+
+            case 46:
+                echo "<form action=19.php method=post> 
+                Ingrese el correo del alumno: 
+                <input type=text name=correo><br> 
+                <input type=submit value=buscar> ";
+                break;
         
             case 47:
                 //para que este programa funcione, se debe de crear 2 nuevas tablas dentro de la base de datos "phpfacil" que anteriormente fue creada...
