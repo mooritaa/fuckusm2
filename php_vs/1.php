@@ -743,6 +743,12 @@
                 header("Location: 24.php");
                 exit();     
                 break; 
+
+            case 53:
+                // Redirigir a 26.php
+                header("Location: 26.php");
+                exit();     
+                break;
                        
 
         case 54:
