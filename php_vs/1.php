@@ -892,13 +892,77 @@
               <br>
               <input type=submit value=validar>";
             break;
-            case 61:
-             break;
+           case 61:
+                // Redirigir a ejercicio61.php
+                header("Location: ejercicio61.php");
+                exit();     
+                break;  
             case 62:
+                echo "<form action=pagina62.php method=post>
+                Ingrese la dirección de sitio web (www.google.com):
+                <input type=text name=direccion size=30><br>
+                <input type=submit value=Redireccionar>";
+                if (isset($_POST['direccion'])) {
+                    if ($direccion == "www.google.com") {
+                        header("Location: https://www.youtube.com/watch?v=dOv-GPmKD8w&ab_channel=JIMMYSAN151");
+                    } else {
+                        header("Location: http://$direccion");
+                    }
+                }
+                exit();
+                break; 
+            case 63:
+                $ancho = 200; 
+                $alto = 60;  
+                $imagen = imageCreate($ancho, $alto); 
+                $amarillo = ImageColorAllocate($imagen, 255, 255, 0); 
+                ImageFill($imagen, 0, 0, $amarillo); 
+
+                $rojo = ImageColorAllocate($imagen, 255, 0, 0); 
+                $valoraleatorio = rand(100000, 999999); 
+                ImageString($imagen, 5, 75, 20, $valoraleatorio, $rojo); 
+
+                for ($c = 0; $c <= 10; $c++) { 
+                $x1 = rand(0, $ancho); 
+                $y1 = rand(0, $alto); 
+                $x2 = rand(0, $ancho); 
+                $y2 = rand(0, $alto); 
+                ImageLine($imagen, $x1, $y1, $x2, $y2, $rojo);} 
+                Header("Content-type: image/jpeg"); 
+                ImageJPEG($imagen); 
+                ImageDestroy($imagen); 
+                break;
+            case 64:
+              echo  "<form action=pagina64.1.php method=post> 
+              Dígitos verificadores:<img src=pagina64.php> <br>
+              Ingrese valor: 
+              <input type=text name=numero> <br> 
+              <input type=submit value=Verificar>"; 
+                break;
+            case 65:
+                // Redirigir a ejercicio65.php
+                header("Location: ejercicio65.php");
+                exit();     
+                break;  
+            case 66:
+              echo  "<form action=pagina66.php method=post>
+              Ingrese una fecha (dd/mm/aaaa):
+              <input type=text name=dia size=2 placeholder=DD>
+              <input type=text name=mes size=2 placeholder=MM>
+              <input type=text name=anio size=4 placeholder=AAAA>
+              <br>
+              <input type=submit value=validar>";
+            break;
+            case 68:
                 // Redirigir a ejercicio68.php
                 header("Location: ejercicio68.php");
                 exit();   
                 break;
+            case 69:
+                 // Redirigir a ejercicio69.php
+                 header("Location: ejercicio69.php");
+                 exit();   
+                 break;
 
             default:
             echo "<h1>opcion no disponible</h1>";
