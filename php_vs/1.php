@@ -606,7 +606,7 @@
               <input type=password name=campoclave><br>
               <input type=submit value=confirmar>";
               break;
-         case 61:
+        case 61:
                 // Redirigir a ejercicio61.php
                 header("Location: ejercicio61.php");
                 exit();     
