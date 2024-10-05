@@ -568,6 +568,13 @@
                 <br>";
                 break;
         
+            case 40 :
+                    echo "<form action=pagina04.php method=post>
+                    Ingrese el mail del alumno a borrar: 
+                    <input type=text name=mail><br> 
+                    <input type=submit value=buscar>";
+                    break;
+        
             case 41:
                 // Create a new connection using mysqli
                 $conexion = new mysqli("localhost", "root", "", "hola");
