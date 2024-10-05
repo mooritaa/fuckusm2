@@ -743,7 +743,24 @@
                 header("Location: 24.php");
                 exit();     
                 break; 
-
+        
+            case 52:
+                echo "<form action=pagina06.php method=post> 
+                Ingrese su mail: 
+                <input type=text name=mailusuario 
+                value=";
+                if (isset($_COOKIE['mail'])) echo $_COOKIE['mail'];
+                echo ">";
+                echo " <br> <input type=radio name=opcion value=recordar>
+                Recordar en esta computadora el mail ingresado. 
+                <br> 
+                <input type=radio name=opcion value=norecordar> 
+                No recordar. 
+                <br> 
+                <input type=submit value=confirmar>";    
+                break;
+           
+        
             case 53:
                 // Redirigir a 26.php
                 header("Location: 26.php");
