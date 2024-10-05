@@ -745,7 +745,7 @@
                 break; 
                        
 
-        case 60:
+        case 54:
               echo "<form action=pagina60.php method=post>
               Ingrese nombre de usuario:
                <input type=text name=campousuario><br>
@@ -753,12 +753,12 @@
               <input type=password name=campoclave><br>
               <input type=submit value=confirmar>";
               break;
-        case 61:
+        case 55:
                 // Redirigir a ejercicio61.php
                 header("Location: ejercicio61.php");
                 exit();     
                 break;  
-            case 62:
+            case 56:
                 echo "<form action=pagina62.php method=post>
                 Ingrese la dirección de sitio web (www.google.com):
                 <input type=text name=direccion size=30><br>
@@ -772,7 +772,7 @@
                 }
                 exit();
                 break; 
-            case 63:
+            case 57:
                 $ancho = 200; 
                 $alto = 60;  
                 $imagen = imageCreate($ancho, $alto); 
@@ -793,19 +793,19 @@
                 ImageJPEG($imagen); 
                 ImageDestroy($imagen); 
                 break;
-            case 64:
+            case 58:
               echo  "<form action=pagina64.1.php method=post> 
               Dígitos verificadores:<img src=pagina64.php> <br>
               Ingrese valor: 
               <input type=text name=numero> <br> 
               <input type=submit value=Verificar>"; 
                 break;
-            case 65:
+            case 59:
                 // Redirigir a ejercicio65.php
                 header("Location: ejercicio65.php");
                 exit();     
                 break;  
-            case 66:
+            case 60:
               echo  "<form action=pagina66.php method=post>
               Ingrese una fecha (dd/mm/aaaa):
               <input type=text name=dia size=2 placeholder=DD>
@@ -814,9 +814,9 @@
               <br>
               <input type=submit value=validar>";
             break;
-            case 67:
+            case 61:
              break;
-            case 68:
+            case 62:
                 // Redirigir a ejercicio68.php
                 header("Location: ejercicio68.php");
                 exit();   
