@@ -600,7 +600,9 @@
                 break; 
         
             case 47:
-                    
+                //para que este programa funcione, se debe de crear 2 nuevas tablas dentro de la base de datos "phpfacil" que anteriormente fue creada...
+                //el nombre de la primera tabla es "alumnos2", con las columnas "codigo" (int), "codigocurso" (int), "mail" (varchar)
+                // el nombre de la segunda tabla es "cursos", con las columnas "codigo" (int), "nomrecur" (varchar)
                 $servername = "localhost";
                 $username = "root";
                 $password = "";
