@@ -544,6 +544,17 @@
                 <br> 
                 <input type=submit value=Registrar>";
                 break;
+        
+            case 39: 
+
+                echo "<form action=pagina03.php method=post>
+                Ingrese el mail del alumno a consultar:
+                <input type=text name=mail><br> 
+               <br>
+               <input type=submit value=buscar>
+                </select> 
+                <br>";
+                break;
 
             default:
             echo "<h1>opcion no disponible</h1>";
