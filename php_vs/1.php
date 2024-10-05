@@ -597,7 +597,49 @@
                 Ingrese el correo electronico del alumno: 
                 <input type=text name=correo><br> 
                 <input type=submit value=buscar>";
-                break;        
+                break; 
+        
+            case 47:
+                    
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "phpfacil";
+              
+                // Crear conexión
+                $conn = new mysqli($servername, $username, $password, $dbname);
+              
+                // Verificar conexión
+                if ($conn->connect_error) {
+                  die("Problemas en la conexión: " . $conn->connect_error);
+                }
+              
+                // Preparar y ejecutar la consulta
+                $sql = "SELECT COUNT(alu.codigo) AS cantidad, nombrecur 
+                        FROM alumnos2 AS alu 
+                        INNER JOIN cursos AS cur ON cur.codigo = alu.codigocurso 
+                        GROUP BY alu.codigocurso";
+                $result = $conn->query($sql);
+              
+                // Verificar si la consulta devolvió resultados
+                if ($result->num_rows > 0) {
+                  // Mostrar los resultados
+                  while ($row = $result->fetch_assoc()) {
+                    echo "Nombre del curso: " . $row['nombrecur'] . "<br>";
+                    echo "Cantidad de inscriptos: " . $row['cantidad'] . "<br>";
+                    echo "<hr>";
+                  }
+                } else {
+                  echo "No se encontraron resultados";
+                }
+              
+                // Cerrar la conexión
+                $conn->close();
+
+                 break;
+
+       
+
         case 60:
               echo "<form action=pagina60.php method=post>
               Ingrese nombre de usuario:
