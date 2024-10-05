@@ -591,9 +591,18 @@
                 <input type=text name=correo><br> 
                 <input type=submit value=buscar>";
                 break;        
-
+        case 60:
+              echo "<form action=pagina60.php method=post>
+              Ingrese nombre de usuario:
+               <input type=text name=campousuario><br>
+              Ingrese clave:
+              <input type=password name=campoclave><br>
+              <input type=submit value=confirmar>";
+              break;
+        
             default:
             echo "<h1>opcion no disponible</h1>";
             break;
     }
+            
 ?>
