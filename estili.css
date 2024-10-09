@@ -13,17 +13,21 @@ body {
 }
 
 #outer {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
-  gap: 10px;
+  gap: 5px;
   width: 80%;
   height: 80%;
 }
 
 h1 {
   grid-column: 1 / -1;
-  margin-bottom: 20px;
+  margin-bottom: 20px; 
+  font-size: 3em;
+  color: #000000;
+  text-shadow: 2px 2px 4px rgb(68, 171, 250);
+ 
 }
 
 .button_slide {
@@ -37,6 +41,7 @@ h1 {
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
+
 .button_slide:hover {
   background-color: #44abfa;
 }
